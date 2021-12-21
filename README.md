@@ -24,7 +24,7 @@ where:
 -   date_end = last day of data to download
 -   delta = delta between dates; can be 'days', '2 days', 'months', 'years', etc. following conventions of `as.Date`
 -   data_product = data product to download among the Black Marble suite products (e.g. VNP46A1, VNP46A2, or VNP46A3)
--   variable_name = variable name to load; depends on the data product considered. For a list see: 
+-   variable_name = variable to load (i.e. band of the nc file); depends on the data product considered. For a list see: 
 
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A1/
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A2/

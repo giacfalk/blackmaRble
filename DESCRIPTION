@@ -16,8 +16,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
 	lubridate (== 1.7.10),
-	rgis (== 0.0.1),
-	opendapr (== 0.1.0),
 	qdapRegex (== 0.7.2),
 	forcats (== 0.5.1),
 	stringr (== 1.4.0),
@@ -36,3 +34,7 @@ Imports:
 	stars (== 0.5.2),
 	abind (== 1.4.5),
 	sf (== 0.9.8)
+	
+Remotes:
+    Pakillo/rgis
+	ptaconet/opendapr

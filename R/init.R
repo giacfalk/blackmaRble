@@ -16,7 +16,6 @@ require(purrr)
 library(scales)
 library(tidyverse)
 library(lubridate)
-library(rgis)
 library(opendapr)
 library(qdapRegex)
 

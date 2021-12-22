@@ -1,6 +1,9 @@
 # blackmaRble
 blackmaRble: retrieve, wrangle and plot VIIRS Black Marble nighttimelight data in R
 
+Since the release of the new Black Marble nighttime light data products based on VIIRS (see Roman et al. 2019 for details), there has been no easy way to access the data from the R scientific computing environment. Given the interest for the data manifested by a large number of researchers and practitioners from different disciplines, I developed a package to serve this purpose. 
+Existing packages such as Rnightlights or opendapr either lack the black marble suite products, or are processing it in an inefficient way and not able to convert the data to a projected Raster or RasterStack object to handle with the conventional GIS functions in R.
+
 ## Installation
 
 Install with:
@@ -11,7 +14,7 @@ install_github("https://github.com/giacfalk/blackmaRble")
 ```
 ## Operation
 
-Operate with like follows, replacing username and password with your EarthData (https://urs.earthdata.nasa.gov/users/new) account.
+Operate the package as follows, replacing username and password with your EarthData (https://urs.earthdata.nasa.gov/users/new) login data.
 
 ``` r
 library(blackmaRble)
@@ -30,4 +33,4 @@ https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A2/
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A3/
 
--   custom_shape = a `sf` simple feature polygon defining areas where to extract the data
+-   custom_shape = a custom `sf` simple feature polygon defining an area where to download and crop the data

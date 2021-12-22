@@ -35,5 +35,5 @@ Imports:
 	abind (== 1.4.5),
 	sf (== 0.9.8)
 Remotes:
-    github::Pakillo/rgis
+    github::Pakillo/rgis,
 	github::ptaconet/opendapr

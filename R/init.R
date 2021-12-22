@@ -18,6 +18,7 @@ library(tidyverse)
 library(lubridate)
 library(opendapr)
 library(qdapRegex)
+library(gtools)
 
 assign("username", username, envir = .GlobalEnv)
 assign("password", password, envir = .GlobalEnv)

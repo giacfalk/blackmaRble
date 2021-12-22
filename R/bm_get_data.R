@@ -36,17 +36,19 @@ yday <- lubridate::yday(date_range)
 df <- data.frame(date_range, year, month, day, yday)
 
 for (i in 1:nrow(df)){
+  tryCatch({
   print(paste0("Downloading file ", i, " of ", nrow(df)*length(tile_index)))
-  csv <- read_csv(paste0("https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5000/", data_product, "/", df$year[i], "/", df$yday[i], ".csv"), col_types = cols())
+  csv <- read_csv(paste0("https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5000/", data_product, "/", df$year[i], "/", ifelse(nchar(df$yday[i])==1, paste0("00", df$yday[i]), ifelse(nchar(df$yday[i])==2, paste0("0", df$yday[i]), df$yday[i])), ".csv"), col_types = cols())
 
   file <- as.character(csv$name[grep(paste(tile_index,collapse="|"), csv$name)])
 
   for (j in 1:length(file)){
 
-    link <- as.character(paste0("https://ladsweb.modaps.eosdis.nasa.gov/opendap/hyrax/allData/5000/", data_product, "/", as.character(df$year[i]), "/", as.character(df$yday[i]),  "/", file[j], ".nc4"))
+    link <- as.character(paste0("https://ladsweb.modaps.eosdis.nasa.gov/opendap/hyrax/allData/5000/", data_product, "/", as.character(df$year[i]), "/", as.character(ifelse(nchar(df$yday[i])==1, paste0("00", df$yday[i]), ifelse(nchar(df$yday[i])==2, paste0("0", df$yday[i]), df$yday[i]))),  "/", file[j], ".nc4"))
 
     dl_func(link, paste0(file.path(Sys.getenv("USERPROFILE"),"Desktop",fsep="\\"), "\\", paste0(file[j], ".nc4")), username, password)
-  }}
+  }  }, error=function(e){})
+}
 
 #
 
@@ -72,7 +74,7 @@ s <- split(vars, list_extents)
 
 vars_stack <- lapply(s, stack)
 
-vars_stack <- stack(vars_stack)
+vars_stack <- do.call(raster::merge, vars_stack)
 
 return(vars_stack)
 

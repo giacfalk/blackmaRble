@@ -54,6 +54,7 @@ for (i in 1:nrow(df)){
 
 lista <- list.files(path=file.path(Sys.getenv("USERPROFILE"),"Desktop",fsep="\\"), pattern = "VNP46A2", full.names = T)
 lista <- gtools::mixedsort(lista)
+lista <- lista[sapply(lista, file.size) > 1000000]
 
 vars <- lapply(lista, function(X){raster(X, varname=variable_name)})
 

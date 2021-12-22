@@ -1,7 +1,7 @@
 #' @export
 dl_func <- function(url, output, username, password) {
   httr::RETRY(verb = "GET", url, httr::authenticate(username, password),
-              httr::write_disk(output, overwrite=T))
+              httr::write_disk(output, overwrite=T), times = 10)
 }
 
 #' @export

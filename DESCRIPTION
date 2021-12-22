@@ -34,6 +34,4 @@ Imports:
 	stars (== 0.5.2),
 	abind (== 1.4.5),
 	sf (== 0.9.8)
-Remotes:
-    github::Pakillo/rgis,
-	github::ptaconet/opendapr
+Remotes: Pakillo/rgis, ptaconet/opendapr

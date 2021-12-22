@@ -4,7 +4,7 @@ blackmaRble: retrieve, wrangle and plot VIIRS Black Marble nighttimelight data i
 ## Background
 
 <div style="text-align: justify">
-Since the release of the new Black Marble nighttime light data products based on VIIRS (see [Roman et al. 2019](https://www.sciencedirect.com/science/article/pii/S003442571830110X) for details), there has been no easy way to access the data from the R scientific computing environment. Given the interest for the data manifested by a large number of researchers and practitioners from different disciplines, I developed a package to serve this purpose. 
+Since the release of the new Black Marble nighttime light data products based on VIIRS [Roman et al. 2019](https://www.sciencedirect.com/science/article/pii/S003442571830110X), there has been no easy way to access the data from the R scientific computing environment. Given the interest for the data manifested by a large number of researchers and practitioners from different disciplines, I developed a package to serve this purpose. 
 
 Existing packages such as [`Rnightlights`](https://github.com/chrisvwn/Rnightlights) or [`opendapr`](https://github.com/ptaconet/opendapr)  either lack the black marble suite products, or are processing it in an inefficient way and not able to convert the data to a projected Raster or RasterStack object to handle with the conventional GIS functions in R.
 </div>

@@ -39,3 +39,7 @@ https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A3/
 
 -   custom_shape = a custom `sf` simple feature polygon defining an area where to download and crop the data
+
+## Disclaimer
+
+This package is developed by a data user, and is thus not linked or endorsed in any way by NASA or the Black Marble data proudct development team. Whilst the primary data quality does not depend on the blackmaRble package, any residual coding error affecting the data output remains the sole responsibility of the package maintainer. 

@@ -20,6 +20,8 @@ library(opendapr)
 library(qdapRegex)
 library(gtools)
 
+options(error = expression(NULL), warn=-1)
+
 assign("username", username, envir = .GlobalEnv)
 assign("password", password, envir = .GlobalEnv)
 

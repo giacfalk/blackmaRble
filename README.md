@@ -24,7 +24,8 @@ Operate the package as follows, replacing username and password with your EarthD
 ``` r
 library(blackmaRble)
 bm_initialize("username", "password")
-bm_get_data( date_start="2019-09-15", date_end='2019-09-16', delta='days', data_product='VNP46A2', variable_name="Gap_Filled_DNB_BRDF_Corrected_NTL", custom_shape=NULL)
+output <- bm_get_data( date_start="2019-09-15", date_end='2019-09-16', delta='days', data_product='VNP46A2', variable_name="Gap_Filled_DNB_BRDF_Corrected_NTL", custom_shape=NULL)
+bm_plot(output)
 ```
 where:
 

@@ -1,4 +1,7 @@
+![alt text](https://raw.githubusercontent.com/giacfalk/blackmaRble/main/logo.png)
+
 # blackmaRble
+
 blackmaRble: retrieve, wrangle and plot VIIRS Black Marble nighttimelight data in R
 
 ## Background

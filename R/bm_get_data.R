@@ -8,7 +8,7 @@ bm_get_data <- function(date_start, date_end, delta, data_product, variable_name
 
   } else {
 
-custom_shape <- read_sf(custom_shape)
+custom_shape <- if (is.character(custom_shape)==TRUE){read_sf(custom_shape)} else{custom_shape}
 
   }
 

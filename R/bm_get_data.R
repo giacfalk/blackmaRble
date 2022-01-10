@@ -76,6 +76,7 @@ vars_stack <- lapply(s, stack)
 
 if (length(vars_stack)>1){
 
+  names(vars_stack) <- NULL
   vars_stack <- do.call(raster::merge, vars_stack)
   vars_stack <- stack(vars_stack)
 

@@ -1,7 +1,7 @@
 #' @export
 bm_plot <- function(X){
 
-  print(plot(X))
+  print(rasterVis::levelplot(X))
 
 }
 

@@ -19,6 +19,7 @@ library(lubridate)
 library(opendapr)
 library(qdapRegex)
 library(gtools)
+library(rasterVis)
 
 options(error = expression(NULL), warn=-1)
 

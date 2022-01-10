@@ -63,8 +63,7 @@ tiles <- read_sf(system.file("extdata", "BlackMarbleTiles.shp", package = "black
 for (i in 1:length(vars)){
   print(i)
   tile_id <- ex_between(lista[i], ".", ".")[[1]][2]
-  extent(vars[[i]]) <- extent(filter(tiles, TileID==tile_id))
-  vars[[i]] <- mask_raster_to_polygon(vars[[i]], custom_shape)
+  vars[[i]] <- crop(vars[[i]], extent(filter(tiles, TileID==tile_id)))
 }
 
 list_extents <- lapply(vars, extent)
@@ -78,9 +77,15 @@ vars_stack <- lapply(s, stack)
 if (length(vars_stack)>1){
 
   vars_stack <- do.call(raster::merge, vars_stack)
+  vars_stack <- stack(vars_stack)
+
+} else{
+
+  vars_stack <- stack(vars_stack)
 
 }
 
-return(vars_stack)
+vars_stack <- crop(vars_stack, extent(custom_shape))
+names(vars_stack) <-
 
 }

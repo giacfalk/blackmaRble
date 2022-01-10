@@ -31,7 +31,6 @@ Operate the package as follows, replacing username and password with your EarthD
 library(blackmaRble)
 bm_initialize("username", "password")
 output <- bm_get_data( date_start="2019-09-15", date_end='2019-09-16', delta='days', data_product='VNP46A2', variable_name="Gap_Filled_DNB_BRDF_Corrected_NTL", custom_shape=NULL)
-bm_plot(output)
 ```
 where:
 
@@ -46,6 +45,28 @@ https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A3/
 
 -   custom_shape = a custom `sf` simple feature polygon defining an area where to download and crop the data
+
+## Example
+
+The resulting data is a regular RasterStack object, as seen by running `output`:
+
+``` r
+> output
+class      : RasterStack 
+dimensions : 73, 108, 7884, 2  (nrow, ncol, ncell, nlayers)
+resolution : 0.004166666, 0.004166667  (x, y)
+extent     : 32.37917, 32.82917, 0.1500007, 0.4541673  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+names      : X2019.09.15, X2019.09.16 
+min values :           0,           0 
+max values :        75.8,        75.8 
+```
+
+and plotting the object with `bm_plot(output)`:
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/giacfalk/blackmaRble/main/plot_example.png" alt="" width="600"/>
+</p>
 
 ## Disclaimer
 

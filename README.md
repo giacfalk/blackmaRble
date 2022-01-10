@@ -6,7 +6,7 @@ blackmaRble: retrieve, wrangle and plot VIIRS Black Marble nighttimelight data i
 <div style="text-align: justify">
 Since the release of the new Black Marble nighttime light data products based on VIIRS [Roman et al. 2019](https://www.sciencedirect.com/science/article/pii/S003442571830110X), there has been no easy way to access the data from the R scientific computing environment. Given the interest for the data manifested by a large number of researchers and practitioners from different disciplines, I developed a package to serve this purpose. 
 
-Existing packages such as [`Rnightlights`](https://github.com/chrisvwn/Rnightlights) or [`opendapr`](https://github.com/ptaconet/opendapr)  either lack the black marble suite products, or are processing it in an inefficient way and not able to convert the data to a projected Raster or RasterStack object to handle with the conventional GIS functions in R.
+Existing packages such as [`Rnightlights`](https://github.com/chrisvwn/Rnightlights) or [`opendapr`](https://github.com/ptaconet/opendapr)  either lack the Black Marble suite products, or are processing it in an inefficient way and not able to convert the data to a projected Raster or RasterStack object to handle with the conventional GIS functions in R.
 </div>
 
 ## Installation
@@ -24,7 +24,8 @@ Operate the package as follows, replacing username and password with your EarthD
 ``` r
 library(blackmaRble)
 bm_initialize("username", "password")
-bm_get_data( date_start="2019-09-15", date_end='2019-09-16', delta='days', data_product='VNP46A2', variable_name="Gap_Filled_DNB_BRDF_Corrected_NTL", custom_shape=NULL)
+output <- bm_get_data( date_start="2019-09-15", date_end='2019-09-16', delta='days', data_product='VNP46A2', variable_name="Gap_Filled_DNB_BRDF_Corrected_NTL", custom_shape=NULL)
+bm_plot(output)
 ```
 where:
 
@@ -39,3 +40,7 @@ https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A
 https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A3/
 
 -   custom_shape = a custom `sf` simple feature polygon defining an area where to download and crop the data
+
+## Disclaimer
+
+This package is developed by a data user, and is thus not linked or endorsed in any way by NASA or the Black Marble data proudct development team. Whilst the primary data quality does not depend on the blackmaRble package, any residual coding error affecting the data output remains the sole responsibility of the package maintainer. 

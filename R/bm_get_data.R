@@ -85,7 +85,7 @@ if (length(vars_stack)>1){
 
 }
 
-vars_stack <- crop(vars_stack, extent(custom_shape))
-names(vars_stack) <-
+vars_stack <- stack(crop(vars_stack, extent(custom_shape)))
+names(vars_stack) <- date_range
 
 }

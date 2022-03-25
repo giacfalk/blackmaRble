@@ -25,7 +25,7 @@ tile_index <- unique(tiles$TileID)
 
 httr::timeout(20)
 options(timeout = 20)
-log <- odr_login_bm(credentials = c(username,password), source = "earthdata")
+log <- odr_login(credentials = c(username,password), source = "earthdata")
 
 #options(download.file.method="internal", url.method="internal")
 

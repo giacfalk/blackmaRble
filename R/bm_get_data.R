@@ -27,7 +27,7 @@ httr::timeout(20)
 options(timeout = 20)
 log <- odr_login(credentials = c(username,password), source = "earthdata")
 
-options(download.file.method="libcurl", url.method="libcurl")
+#options(download.file.method="internal", url.method="internal")
 
 date_range <- seq(as.Date(date_start), as.Date(date_end), by = delta)
 year <- lubridate::year(date_range)

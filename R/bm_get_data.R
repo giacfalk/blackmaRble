@@ -23,6 +23,8 @@ assign("custom_shape", custom_shape, envir = .GlobalEnv)
 tiles <- st_filter(tiles, custom_shape, .predicate = st_intersects)
 tile_index <- unique(tiles$TileID)
 
+httr::timeout(20)
+options(timeout = 20)
 log <- odr_login(credentials = c(username,password), source = "earthdata")
 
 options(download.file.method="libcurl", url.method="libcurl")
